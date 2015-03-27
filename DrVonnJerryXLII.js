@@ -1,6 +1,8 @@
 var helloWorld = function() {
-    var hello = ["Hey, this is Jeri!",
-    "Find me on other sites:"
+    var hello = ["Hey, you've reached Jeri.",
+    "I can't come to the phone right now.",
+    "Please leave me a message,",
+    "and I'll get back to you shortly.",
     "Github: https://github.com/drvonnjerryxlii",
     "LinkedIn: https://www.linkedin.com/in/jerisommers",
     "Twitter: @drvonnjerryxlii",
