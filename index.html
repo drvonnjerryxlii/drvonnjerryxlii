@@ -4,20 +4,22 @@
     <meta charset="utf-8" />
     <title>Jeri Sommers</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-    <script type="text/javascript" src="DrVonnJerryXLII.js"></script>
     <style type="text/css">
       body {
         background-color: #fff;
         color: #000;
       }
 
-      .jumbo-links a {
+      h1, p {
+        text-align: center;
+        font-family: "Droid Sans", "Verdana", sans-serif;
+      }
+
+      .brand-links a {
         color: #444;
         font-size: 3rem;
         padding: 3rem;
       }
-
-
 
       /* special brand colors (thanks to brandcolors.com for cheatsheet) */
 
@@ -52,36 +54,39 @@
       #email:hover, #email:active {
         color: #3a0;
       }
-
-      h1, p {
-        text-align: center;
-        font-family: "Droid Sans", "Verdana", sans-serif;
-      }
     </style>
+    <script type="text/javascript">
+      var helloWorld = function() {
+          var hello = [
+            "Hey, you've reached Jeri.",
+            "I can't come to the phone right now.",
+            "Please leave me a message,",
+            "and I'll get back to you shortly.",
+            "Github: https://github.com/drvonnjerryxlii",
+            "Projects: [broken WIP] https://drvonnjerryxlii.github.io/projects",
+            "LinkedIn: https://www.linkedin.com/in/jerisommers",
+            "Resume: [broken WIP] #",
+            "Email: mailto:drvonnjerryxliiATgmail.com"
+          ];
+
+          hello.forEach(function(x) {
+              console.log(x);
+          });
+      };
+    </script>
   </head>
   <body onload="helloWorld();">
-    <div>
-      <h1>Jeri Sommers</h1>
+    <h1>Jeri Sommers</h1>
 
-      <!--
-      <p>
-        [<a href="mailto:DrVonnJerryXLII@gmail.com">Email</a>] -
-        [<a href="https://github.com/drvonnjerryxlii">Github</a>] -
-        [<a href="https://www.linkedin.com/in/jerisommers">LinkedIn</a>] -
-        [<a href="https://twitter.com/drvonnjerryxlii">Twitter</a>]
-      </p>
-      -->
+    <p>
+      <a href="/setGame"><img src="img/setClone.png" alt="A screenshot from a game halfway through!" width="600" height="263" /></a>
+    </p>
 
-      <p>
-        <a href="/setGame"><img src="img/setClone.png" alt="A screenshot from a game halfway through!" width="600" height="263" /></a>
-      </p>
+    <p>
+      <a href="/solarSystem"><img src="img/solarSystem.png" alt="A screenshot of the solar system!" width="600" height="271" /></a>
+    </p>
 
-      <p>
-        <a href="/solarSystem"><img src="img/solarSystem.png" alt="A screenshot of the solar system!" width="600" height="271" /></a>
-      </p>
-    </div>
-
-    <p class="jumbo-links">
+    <p class="brand-links">
       <a id="github" href="https://www.github.com/drvonnjerryxlii" title="GitHub"><i class="fa fa-github" alt="GitHub icon (silhouette of GitHub's Octocat against a dark background)"></i></a>
       <a id="code" href="https://drvonnjerryxlii.github.io/projects" title="Projects"><i class="fa fa-code" alt="Code icon (open tag, forward slash, close tag)"></i></a>
       <a id="linkedin" href="https://www.linkedin.com/in/jerisommers" title="LinkedIn"><i class="fa fa-linkedin-square" alt="LinkedIn icon ()"></i></a>
@@ -90,4 +95,3 @@
     </p>
   </body>
 </html>
-<!--This has been a Dr. Vonn Jerry XLII production.-->
