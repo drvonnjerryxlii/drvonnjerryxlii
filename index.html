@@ -1,24 +1,93 @@
 <!DOCTYPE html>
-<head>
+<html>
+  <head>
     <meta charset="utf-8" />
     <title>Jeri Sommers</title>
-    <link rel="stylesheet" href="DrVonnJerryXLII.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
     <script type="text/javascript" src="DrVonnJerryXLII.js"></script>
-</head>
-<body onload="helloWorld();">
+    <style type="text/css">
+      body {
+        background-color: #fff;
+        color: #000;
+      }
+
+      .jumbo-links a {
+        color: #444;
+        font-size: 3rem;
+        padding: 3rem;
+      }
 
 
 
-<div>
-<h2 align="center">Jeri Sommers</h2>
-<p align="center">[<a href="mailto:DrVonnJerryXLII@gmail.com">Email</a>] - [<a href="https://github.com/drvonnjerryxlii">Github</a>] - [<a href="https://www.linkedin.com/in/jerisommers">LinkedIn</a>] - [<a href="https://twitter.com/drvonnjerryxlii">Twitter</a>]</p>
+      /* special brand colors (thanks to brandcolors.com for cheatsheet) */
 
-<p align="center"><a href="/setGame"><img src="/img/setClone.png" alt="A screenshot from a game halfway through!" width="600" height="263" /></p>
+      #github {
+        color: #333; /* official GitHub dark grey. I love that it's the short form. <3 */
+      }
 
-<p align="center"><a href="/solarSystem"><img src="/img/solarSystem.png" alt="A screenshot of the solar system!" width="600" height="271" /></p>
-</div>
+      #github:hover, #github:active {
+        color: #6cc644; /* official GitHub green? is it green? !R check later without flux */
+      }
 
+      #linkedin {
+        color: #86888a; /* official LinkedIn medium grey. their dark grey is too dark. */
+      }
 
-</body>
+      #linkedin:hover, #linkedin:active {
+        color: #0077b5; /* official LinkedIn blue <-- also the reason the page's background is white. */
+      }
+
+      #code:hover, #code:active {
+        color: #0f4;
+      }
+
+      #resume:hover, #resume:active {
+        color: #f00; /* bar? official Adobe color. */
+      }
+
+      #email {
+        color: #555; /* this envelope is otherwise too dark compared because it's filled in. */
+      }
+
+      #email:hover, #email:active {
+        color: #3a0;
+      }
+
+      h1, p {
+        text-align: center;
+        font-family: "Droid Sans", "Verdana", sans-serif;
+      }
+    </style>
+  </head>
+  <body onload="helloWorld();">
+    <div>
+      <h1>Jeri Sommers</h1>
+
+      <!--
+      <p>
+        [<a href="mailto:DrVonnJerryXLII@gmail.com">Email</a>] -
+        [<a href="https://github.com/drvonnjerryxlii">Github</a>] -
+        [<a href="https://www.linkedin.com/in/jerisommers">LinkedIn</a>] -
+        [<a href="https://twitter.com/drvonnjerryxlii">Twitter</a>]
+      </p>
+      -->
+
+      <p>
+        <a href="/setGame"><img src="img/setClone.png" alt="A screenshot from a game halfway through!" width="600" height="263" /></a>
+      </p>
+
+      <p>
+        <a href="/solarSystem"><img src="img/solarSystem.png" alt="A screenshot of the solar system!" width="600" height="271" /></a>
+      </p>
+    </div>
+
+    <p class="jumbo-links">
+      <a id="github" href="https://www.github.com/drvonnjerryxlii" title="GitHub"><i class="fa fa-github" alt="GitHub icon (silhouette of GitHub's Octocat against a dark background)"></i></a>
+      <a id="code" href="https://drvonnjerryxlii.github.io/projects" title="Projects"><i class="fa fa-code" alt="Code icon (open tag, forward slash, close tag)"></i></a>
+      <a id="linkedin" href="https://www.linkedin.com/in/jerisommers" title="LinkedIn"><i class="fa fa-linkedin-square" alt="LinkedIn icon ()"></i></a>
+      <a id="resume" href="#" title="Resume"><i class="fa fa-file-pdf-o"></i></a>
+      <a id="email" href="mailto:drvonnjerryxliiATgmail.com" title="Email"><i class="fa fa-envelope"></i></a>
+    </p>
+  </body>
 </html>
 <!--This has been a Dr. Vonn Jerry XLII production.-->
