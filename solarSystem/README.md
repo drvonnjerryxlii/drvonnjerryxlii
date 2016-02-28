@@ -1,4 +1,4 @@
-This model is not to scale.
+This model ([link][model]) is not to scale.
 * It's based on the code presented in [this Codecademy tutorial][code].
 * For size guidelines, I used the numbers from [this Wikipedia article][sizes].
   * The displayed objects are based on the size of Pluto -- any object in the
@@ -28,6 +28,7 @@ Neptune | 3.86 | 30px | 0.671 days | 0.35s | 164.791 years | 90s
 -I. Triton | 0.212 | 2px | 5.877 days | 2.5 | 5.877 days | 2.5s
 Pluto | 0.185 | 2px | -6.387 days | (-)3s | 247.921 years | 120s
 
+[model]: https://drvonnjerryxlii.github.io/solarSystem "Watch it spin!"
 [code]: http://www.codecademy.com/en/goals/web-beginner-en-ymqg0 "Sun, Earth, and Code codebit"
 [sizes]: http://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size "Wikipedia: List of Solar System objects by size"
 [nasa]: https://solarsystem.nasa.gov/planets "NASA.gov: Solar System Exploration: Planets"

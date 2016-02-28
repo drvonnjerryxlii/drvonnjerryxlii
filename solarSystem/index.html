@@ -1,82 +1,202 @@
 <!--
-    Hi! This, loosely speaking, was one of the prep assignments for
-    Ada Developers Academy Cohort[2]. The original assignment was to
-    create the sun, earth, and for extra credit-- the moon. I had
-    some extra time while waiting for my new laptop to arrive, so I
-    decided to spend most of it working on this model. I hope you
-    enjoy it! If you're wondering which numbers I used for sizes,
-    speeds, and so on, check out the README file.
+    This is based on the following Codecademy tutorial. The animation is CSS.
 
     Codecademy tutorial:
     http://www.codecademy.com/en/goals/web-beginner-en-ymqg0
-                      --Jeri, drvonnjerryxlii[AT]gmail.com -[AT] + @
+
+    I wanted to go for a pretty minimal footprint, so I used some JavaScript
+    without jQuery to create and append the info links to the DOM. That part of
+    the code is unrelated to the tutorial. It would have been an even smaller
+    footprint to use the JavaScript to find the element and remove a display:
+    none style-- but I wanted to play with creating elements and modifying the
+    DOM without jQuery. This code has pretty minimal error handling, since I
+    wrote it for myself and mostly trust myself to not pass in bad params.
+        --Jeri, drvonnjerryxliiATgmail.com -AT + @
+
+    PS: Ideas for future me:
+    - add dismiss links functionality?
+    - add some fake loading screen to cover the starting positions of the planet
+    - animate the links popping in
 -->
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="solarSystem.css" />
+        <meta charset='utf-8' />
+        <link rel='stylesheet' href='./solarSystem.css' />
         <title>Jeri's solar system model</title>
+
+        <script type='text/javascript'>
+          /**
+           * Creates an object ready for appending to the DOM.
+           * @param {String} elementString - The type of element to create.
+           * @param {String} optionalContentOrInnerElementString - The content to insert into the element (optional).
+           * @return {UnattachedDocumentObject} element - A loose element on the document.
+           */
+          function createElement(elementString, optionalContentOrInnerElementString) {
+              // guard clause to protect against missing required param elementString
+              if (elementString == null || elementString == undefined) {
+                console.log('Error: Tried to call createElement() without required param elementString.');
+                return null;
+              };
+
+              // build a dictionary of elements that are self closing / won't accept inner HTML
+              var selfClosingElements = { 'area': 1, 'base': 1, 'br': 1,
+                  'col': 1, 'command': 1, 'embed': 1, 'hr': 1, 'img': 1,
+                  'input': 1, 'keygen': 1, 'link': 1, 'meta': 1, 'param': 1,
+                  'source': 1, 'track': 1, 'wbr': 1 };
+
+              // create the element
+              var element = document.createElement(elementString);
+
+              // check for no content and unqualified element types
+              if (optionalContentOrInnerElementString &&
+                  selfClosingElements[elementString] !== 1) {
+
+                  // insert the content to a qualified element
+                  element.innerHTML = optionalContentOrInnerElementString;
+
+                  //element = setInnerHTML(element, optionalContentOrInnerElementString);
+              }
+
+              // return element to sender
+              return element;
+          }
+
+          /**
+           * Creates an object ready for appending to the DOM.
+           * @param {String} elementString - The type of element to create.
+           * @param {Object} attributesObject - The attributes to add to the element.
+           * @param {String} optionalContentOrInnerElementString - The optional content to insert into the element.
+           * @return {UnattachedDocumentObject} element - A loose element on the document.
+           */
+          // for clarity, this should be called createElementWithAttributes, but lazy typing ftw.
+          function createElement2(elementString, attributesObject, optionalContentOrInnerElementString) {
+              // guard clause to protect against missing required param attributesObject
+              if (attributesObject == null || attributesObject == undefined) {
+                console.log('Warning: Tried to call createElementWithAttributes() without required param attributesObject.');
+                return createElement(elementString, optionalContentOrInnerElementString);
+              }
+
+              // create the element
+              var element = createElement(elementString, optionalContentOrInnerElementString);
+
+              // build an array from the keys in the attributesObject
+              var attrs = Object.keys(attributesObject);
+
+              // loop through the keys, setting the attribute on the element
+              attrs.forEach(function applyAttrToElement(attr) {
+                  element.setAttribute(attr, attributesObject[attr]);
+              });
+
+              return element;
+          }
+
+          /**
+           * Appends to the DOM a couple links with more information about this
+           * solar system model and about me / back to the portfolio page.
+           */
+          function addAboutLinksToDOM() {
+              // remove the event listener, as its work is done.
+              document.removeEventListener('DOMContentLoaded', addAboutLinksToDOM);
+
+              var outerDiv = createElement2('div', { 'id': 'about-links', 'style': 'display: none;' });
+
+              var projectLink = createElement2(
+                  'a',
+                  { 'href': 'https://github.com/drvonnjerryxlii/drvonnjerryxlii.github.io/tree/master/solarSystem',
+                    'title': 'about this solar system model' },
+                  'about model');
+
+              var portfolioLink = createElement2(
+                  'a',
+                  { 'href': 'https://drvonnjerryxlii.github.io/', 'title': 'check out my portfolio' },
+                  'portfolio');
+
+              outerDiv.appendChild(projectLink);
+              outerDiv.appendChild(portfolioLink);
+
+              var theBody = document.getElementsByTagName('body')[0];
+
+              theBody.appendChild(outerDiv);
+
+              // set timeout for displaying about links-- 5 seconds sounds good
+              setTimeout(displayAboutLinks, 5000);
+          }
+
+          /**
+           * Makes the about links pop in.
+           */
+          function displayAboutLinks() {
+              // grab about links from page
+              var aboutLinks = document.getElementById('about-links');
+
+              // remove style preventing them from display
+              aboutLinks.setAttribute('style', '');
+          }
+
+          // load about links once document is ready
+          document.addEventListener('DOMContentLoaded', addAboutLinksToDOM);
+        </script>
     </head>
 
     <body>
-        <div id="sun" class="planet-orbit"></div>
+        <div id='sun' class='planet-orbit'></div>
 
-        <div id="mercury-orbit" class="planet-orbit">
-            <div id="mercury" class="planet"></div>
+        <div id='mercury-orbit' class='planet-orbit'>
+            <div id='mercury' class='planet'></div>
         </div>
 
-        <div id="venus-orbit" class="planet-orbit">
-            <div id="venus" class="planet"></div>
+        <div id='venus-orbit' class='planet-orbit'>
+            <div id='venus' class='planet'></div>
         </div>
 
-        <div id="earth-orbit" class="planet-orbit">
-            <div id="earth" class="planet"></div>
-            <div id="earth-moon-orbit" class="moon-orbit">
-                <div id="earth-moon" class="moon"></div>
+        <div id='earth-orbit' class='planet-orbit'>
+            <div id='earth' class='planet'></div>
+            <div id='earth-moon-orbit' class='moon-orbit'>
+                <div id='earth-moon' class='moon'></div>
             </div>
         </div>
 
-        <div id="mars-orbit" class="planet-orbit">
-            <div id="mars" class="planet"></div>
+        <div id='mars-orbit' class='planet-orbit'>
+            <div id='mars' class='planet'></div>
         </div>
 
-        <div id="jupiter-orbit" class="planet-orbit">
-            <div id="jupiter" class="planet"></div>
-            <div id="jupiter-ganymede-orbit" class="moon-orbit">
-                <div id="jupiter-ganymede" class="moon"></div>
+        <div id='jupiter-orbit' class='planet-orbit'>
+            <div id='jupiter' class='planet'></div>
+            <div id='jupiter-ganymede-orbit' class='moon-orbit'>
+                <div id='jupiter-ganymede' class='moon'></div>
             </div>
-            <div id="jupiter-callisto-orbit" class="moon-orbit">
-                <div id="jupiter-callisto" class="moon"></div>
+            <div id='jupiter-callisto-orbit' class='moon-orbit'>
+                <div id='jupiter-callisto' class='moon'></div>
             </div>
-            <div id="jupiter-io-orbit" class="moon-orbit">
-                <div id="jupiter-io" class="moon"></div>
+            <div id='jupiter-io-orbit' class='moon-orbit'>
+                <div id='jupiter-io' class='moon'></div>
             </div>
-            <div id="jupiter-europa-orbit" class="moon-orbit">
-                <div id="jupiter-europa" class="moon"></div>
-            </div>
-        </div>
-
-        <div id="saturn-orbit" class="planet-orbit">
-            <div id="saturn" class="planet"></div>
-            <div id="saturn-titan-orbit" class="moon-orbit">
-                <div id="saturn-titan" class="moon"></div>
+            <div id='jupiter-europa-orbit' class='moon-orbit'>
+                <div id='jupiter-europa' class='moon'></div>
             </div>
         </div>
 
-        <div id="uranus-orbit" class="planet-orbit">
-            <div id="uranus" class="planet"></div>
-        </div>
-
-        <div id="neptune-orbit" class="planet-orbit">
-            <div id="neptune" class="planet"></div>
-            <div id="neptune-triton-orbit" class="moon-orbit">
-                <div id="neptune-triton" class="moon"></div>
+        <div id='saturn-orbit' class='planet-orbit'>
+            <div id='saturn' class='planet'></div>
+            <div id='saturn-titan-orbit' class='moon-orbit'>
+                <div id='saturn-titan' class='moon'></div>
             </div>
         </div>
 
-        <div id="pluto-orbit" class="planet-orbit">
-            <div id="pluto" class="planet"></div>
+        <div id='uranus-orbit' class='planet-orbit'>
+            <div id='uranus' class='planet'></div>
+        </div>
+
+        <div id='neptune-orbit' class='planet-orbit'>
+            <div id='neptune' class='planet'></div>
+            <div id='neptune-triton-orbit' class='moon-orbit'>
+                <div id='neptune-triton' class='moon'></div>
+            </div>
+        </div>
+
+        <div id='pluto-orbit' class='planet-orbit'>
+            <div id='pluto' class='planet'></div>
         </div>
 
     </body>

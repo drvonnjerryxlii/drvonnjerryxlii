@@ -12,7 +12,26 @@ html, body {
     background-color: black;
 }
 
-div {
+div#about-links {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10;
+    background-color: rgba(200, 255, 220, 0.3);
+    text-align: center;
+}
+
+div#about-links a {
+    font-weight: bold;
+    font-family: "Droid Sans", "Verdana", sans-serif;
+    text-decoration: none;
+    color: #0a3;
+    display: block;
+    padding: 0.5rem;
+}
+
+div#about-links a:hover, div#about-links a:active {
+    color: #3d6;
 }
 
 div.planet {
@@ -26,10 +45,10 @@ div.planet-orbit {
     top: 50%;
     left: 50%;
 
-/*    border-width: 2px;*/
-/*    border-style: dotted;*/
-/*    border-color: white;*/
-/*    border-radius: 50%;*/
+    /*border-width: 2px;
+    border-style: dotted;
+    border-color: white;
+    border-radius: 50%;*/
 }
 
 div.moon {
@@ -43,10 +62,10 @@ div.moon-orbit {
     top: 50%;
     left: 50%;
 
-/*    border-width: 2px;*/
-/*    border-style: dotted;*/
-/*    border-color: white;*/
-/*    border-radius: 50%;*/
+    /*border-width: 2px;
+    border-style: dotted;
+    border-color: white;
+    border-radius: 50%;*/
 }
 
 #sun {
@@ -521,19 +540,19 @@ div.moon-orbit {
 
 
 #uranus {
-    background-color: purple;
-    background-image: linear-gradient(purple, green);
+    background-color: cyan;
+    background-image: linear-gradient(cyan, green);
 
     height: 32px;
     width: 32px;
     margin-left: -16px;
     margin-top: -16px;
-    border-color: purple;
+    border-color: cyan;
     border-width: 2px;
     border-style: solid;
     border-radius: 50%;
 
-    box-shadow: 0 0 10px green;
+    box-shadow: 0 0 10px cyan;
 
     -webkit-animation: spin-left 0.35s linear infinite;
        -moz-animation: spin-left 0.35s linear infinite;
@@ -559,7 +578,7 @@ div.moon-orbit {
 
 #neptune {
     background-color: blue;
-    background-image: linear-gradient(blue, purple);
+    background-image: linear-gradient(cyan, blue);
 
     height: 30px;
     width: 30px;
@@ -570,7 +589,7 @@ div.moon-orbit {
     border-style: solid;
     border-radius: 50%;
 
-    box-shadow: 0 0 10px purple;
+    box-shadow: 0 0 10px blue;
 
     -webkit-animation: spin-right 0.35s linear infinite;
        -moz-animation: spin-right 0.35s linear infinite;
