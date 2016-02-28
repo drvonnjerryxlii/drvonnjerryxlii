@@ -1,16 +1,18 @@
 This model is not to scale.
 * It's based on the code presented in [this Codecademy tutorial][code].
 * For size guidelines, I used the numbers from [this Wikipedia article][sizes].
+  * The displayed objects are based on the size of Pluto -- any object in the
+    inner solar system that is greater than the size of Pluto is in this model.
 * For day and year guidelines, I did a lot of poking around
   [this NASA section about planets][nasa].
 * Why do Venus and Uranus rotate backwards (compared to the other planets) in
   this model? [Read this link!][back]
 
-object | actual size | size used | actual day | day used | actual year | year used
+object | [actual size][sizes] | size used | [actual day][nasa] | day used | [actual year][nasa] | year used
 :------|------------:|----------:|-----------:|---------:|------------:|---------:
 the Sun | 109.3 | 200px | 25.38 days | 30s | None | None
-Mercury | 0.383 | 6px | 58.646 days | 10s | 87.97 days | 15s
-Venus | 0.95 | 16px | -243.018 days | (-)20s | 224.70 days | 15s
+Mercury | 0.383 | 6px | 58.646 days | 6s | 87.97 days | 8s
+Venus | 0.95 | 16px | [-243.018 days][back] | (-)20s | 224.70 days | 15s
 Earth | 1.0 | 18px | 0.997 days | 0.5s | 365.26 days | 20s
 -I. Moon | 0.273 | 2px | 27.322 days | 3s | 27.322 days | 3s
 Mars | 0.532 | 12px | 1.026 days | 0.55s | 1.881 years | 25s
@@ -21,7 +23,7 @@ Jupiter | 10.97 | 40px | 0.414 days | 0.2s | 11.863 years | 30s
 -IV. Callisto | 0.378 | 4px | 16.689 days | 8.5s | 16.689 days | 8.5s
 Saturn | 9.14 | 36px | 0.444 days | 0.25s | 29.447 years | 60s
 -VI. Titan | 0.404 | 4px | 15.95 days | 8s | 15.95 days | 8s
-Uranus | 3.98 | 32px | -0.718 days | (-)0.35s | 84.017 years | 75s
+Uranus | 3.98 | 32px | [-0.718 days][back] | (-)0.35s | 84.017 years | 75s
 Neptune | 3.86 | 30px | 0.671 days | 0.35s | 164.791 years | 90s
 -I. Triton | 0.212 | 2px | 5.877 days | 2.5 | 5.877 days | 2.5s
 Pluto | 0.185 | 2px | -6.387 days | (-)3s | 247.921 years | 120s
