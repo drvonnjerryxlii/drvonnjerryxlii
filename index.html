@@ -5,14 +5,21 @@
     <title>Jeri Sommers</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
     <style type="text/css">
+      html {
+        height: 100%; /* makes flex happy */
+      }
+      
       body {
         background-color: #000;
-        color: #fff;
-      }
-
-      h1, p {
-        text-align: center;
+        color: #999;
         font-family: "Droid Sans", "Verdana", sans-serif;
+        
+        /* use flex to center vertically :) */
+        height: 100%;
+        display: flex; /* do not support ie10 */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
 
       .brand-links a {
@@ -63,8 +70,8 @@
             "Please leave me a message,",
             "and I'll get back to you shortly.",
             "LinkedIn: https://www.linkedin.com/in/sojeri",
-            "Resume: https://sojeri.github.io/jeri-sommers-resume.pdf",
             "Email: mailto:sojeriATuw.edu",
+            "Resume: https://sojeri.github.io/jeri-sommers-resume.pdf",
             "Github: https://github.com/sojeri"
           ];
 
