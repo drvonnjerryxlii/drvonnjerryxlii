@@ -2,65 +2,57 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Jeri Sommers</title>
+    <title>Jeri Sommers | Senior Software Engineer</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
     <style type="text/css">
-      html {
-        height: 100%; /* makes flex happy */
-      }
-      
       body {
-        background-color: #000;
-        color: #999;
-        font-family: "Droid Sans", "Verdana", sans-serif;
-        
-        /* use flex to center vertically :) */
-        height: 100%;
-        display: flex; /* do not support ie10 */
-        flex-direction: column;
+        font-family: "Open Sans", sans-serif;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        font-weight: bold;
+        color: aqua;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      a:visited {
+        color: coral;
+      }
+
+      body, header {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        flex-flow: column nowrap;
+        background: #131313;
+        color: white;
+        text-align: center;
         align-items: center;
         justify-content: center;
       }
 
-      .brand-links a {
-        color: #444;
-        font-size: 3rem;
-        margin: 2rem;
-        padding: 1rem;
+      nav {
+        display: flex;
+        justify-content: center;
+        width: 100vw;
       }
 
-      /* special brand colors (thanks to brandcolors.com for cheatsheet) */
-
-      #github {
-        color: #333; /* official GitHub dark grey. I love that it's the short form. <3 */
+      ul {
+        padding-left: 0;
+        list-style-type: none;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: baseline;
+        justify-content: center;
       }
 
-      #github:hover, #github:active {
-        color: #6cc644; /* official GitHub green? is it green? !R check later without flux */
-      }
-
-      #linkedin {
-        color: #86888a; /* official LinkedIn medium grey. their dark grey is too dark. */
-      }
-
-      #linkedin:hover, #linkedin:active {
-        color: #0077b5; /* official LinkedIn blue <-- also the reason the page's background is white. */
-      }
-
-      #code:hover, #code:active {
-        color: #0f4;
-      }
-
-      #resume:hover, #resume:active {
-        color: #f00; /* bar? official Adobe color. */
-      }
-
-      #email {
-        color: #555; /* this envelope is otherwise too dark compared because it's filled in. */
-      }
-
-      #email:hover, #email:active {
-        color: #3a0;
+      li {
+        padding: 0.5rem 1rem;
       }
     </style>
     <script type="text/javascript">
@@ -71,8 +63,6 @@
             "Please leave me a message,",
             "and I'll get back to you shortly.",
             "LinkedIn: https://www.linkedin.com/in/sojeri",
-            "Email: mailto:sojeriATuw.edu",
-            "Resume: https://sojeri.github.io/jeri-sommers-resume.pdf",
             "Github: https://github.com/sojeri"
           ];
 
@@ -83,13 +73,44 @@
     </script>
   </head>
   <body onload="helloWorld();">
-    <h1>Jeri Sommers</h1>
-    <p class="brand-links">
-      <!--<a id="code" href="https://sojeri.github.io/projects" title="Projects"><i class="fa fa-code" alt="Code icon (open tag, forward slash, close tag)"></i></a>-->
-      <a id="linkedin" href="https://www.linkedin.com/in/sojeri" title="Check out my LinkedIn profile."><i class="fa fa-linkedin-square" alt="LinkedIn icon (the letters li inside a box)"></i></a>
-      <a id="email" href="mailto:sojeriATuw.edu" title="Shoot me an email! (Don't forget to replace 'AT' with '@'.)"><i class="fa fa-envelope" alt="envelope icon"></i></a>
-      <a id="resume" href="#" title="Review my resume."><i class="fa fa-file-pdf-o" alt="PDF icon"></i></a>
-      <a id="github" href="https://www.github.com/sojeri" title="Spy on some old commits. (Mostly my Ada Dev Academy work.)"><i class="fa fa-github" alt="GitHub icon (silhouette of GitHub's Octocat against a dark background)"></i></a>
-    </p>
+    <header>
+      <h1>Jeri Sommers</h1>
+      <h2>Senior Software Engineer</h2>
+      <nav>
+        <ul>
+          <li>
+            <i class="fa fa-linkedin-square" alt="icon/logo (the letters 'in' inside a box)"></i>
+            <a href="https://www.linkedin.com/in/sojeri">LinkedIn</a>
+          </li>
+          <li>
+            <i class="fa fa-github" alt="icon/logo (silhouette of GitHub's Octocat against a dark background)"></i>
+            <a href="https://www.github.com/sojeri">GitHub</a>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <h3>
+        Bonus content:<br />
+        Links to some old projects
+      </h3>
+      <ul>
+        <li>
+          <i class="fa fa-sun-o" alt="Sun icon"></i>
+          <a href="https://sojeri.github.io/howsTheWeatherSeattle">Weather app</a> (a fun side project where I was playing with weather & moon phase APIs, <a href="https://www.github.com/sojeri/howsTheWeatherSeattle">more info / documentation</a>)
+        </li>
+        <li>
+          <i class="fa fa-rocket" alt="Rocket icon"></i>
+          <a href="https://sojeri.github.io/solarSystem">Solar system animation</a> (first coding bootcamp project, circa 2015, <a href="https://www.github.com/sojeri/sojeri.github.io/solarSystem">more info / documentation</a>)
+          </a>
+        </li>
+        <li>
+          <i class="fa fa-rocket" alt="Rocket icon"></i>
+          <a href="https://sojeri.github.io/setGame">Set clone</a> (my first coding project, circa 2014 or 2015)
+          </a>
+        </li>
+      </ul>
+    </section>
   </body>
 </html>
