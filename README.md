@@ -6,7 +6,9 @@ to be honest, there's not much going on here.
 
 ### CHANGELOG
 
-__2/2023:__ added some project links beyond the initial scroll window. now if people wander they can see some historical content that still makes me happy. :)
+__2/2023:__
+- tweaked solar system start positions to improve first view (all in a line was weird)
+- added some project links beyond the initial scroll window. now if people wander they can see some historical content that still makes me happy.
 
 __1/2023:__ had a three day weekend and felt like switching things up. no real functional changes. removed some links that weren't being used.
 
